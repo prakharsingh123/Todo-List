@@ -20,19 +20,35 @@ addBtn.addEventListener('click',()=>{
         const list = document.createElement('li')
 
         const delBtn = document.createElement('button')
+        const editBtn = document.createElement('button')
         delBtn.textContent='Delete'
+        editBtn.textContent='Edit'
         // result.appendChild(delBtn)
         list.textContent=inp1
         
         
-
+        list.appendChild(editBtn)
         list.appendChild(delBtn)
+       
 
         result.appendChild(list)
         inp1.value="";
+
+        delBtn.addEventListener('click', () => {
+            list.remove(); // Remove the list item when the delete button is clicked
+        });
+
+         // Add edit functionality
+         editBtn.addEventListener('click', () => {
+            const newValue = prompt('Edit your task:', list.firstChild.textContent);
+            if (newValue !== null && newValue.trim() !== '') {
+                list.firstChild.textContent = newValue; // Update the task text
+            }
+        });
     }   
     
     // console.log(inp1);
+  
     
     
 })
