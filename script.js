@@ -47,11 +47,9 @@ addBtn.addEventListener('click',()=>{
         });
     }   
     
-    // console.log(inp1);
-  
-    
-    
+    // console.log(inp1);  
 })
+
 
 
 
